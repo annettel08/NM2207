@@ -1,0 +1,81 @@
+---
+title: "Challenge-2"
+author: "Annette"
+date: "`r Sys.Date()`"
+output: html_document
+---
+Question 1.1: What does the term “CSV” in playlist_data.csv stand for, and why is it a popular format for storing tabular data?
+
+Solution: The term "CSV" stands for "Comma-Separated Values". It is a popular format becasue it is very compatible with many software applications, such as data analysis tools and spreadsheet programs. It is also simple to create, read, and edit, can be easily transferred between different operating systems and software, can adapt to different data structures and types of data, and is more compact.
+
+
+Question 1.2: load the tidyverse package to work with .csv files in R.
+
+Solution: library(tidyverse)
+
+
+Question 1.3: Import the data-set, playlist_data.csv.
+
+Solution:read_csv("playlist_data.csv")
+
+
+Question 1.4: Assign the data-set to a variable, playlist_data.
+
+Solution:playlist_data <- read_csv("playlist_data.csv")
+
+
+Question 1.5: Get more information about read_csv() command and provide a screenshot of the information displayed in the “Help” tab of the “Files” pane.
+
+Solution: ?read_csv()
+ 
+```{r, out.height= "350px",out.width= "350px",echo=TRUE,eval=TRUE}
+knitr::include_graphics("/Users/annettelokexinghui/Dropbox/Mac/Documents/NM2207/Week-2/Question 1.5 screenshot.png") 
+```
+
+Question 1.6: What does the skip argument in the read_csv() function do?
+Solution: 
+
+Question 1.7: Display the contents of the data-set
+Solution: playlist_data
+
+Question 1.8: Assume you have a CSV file named sales_data.csv containing information about sales transactions. How would you use the read_csv() function to import this file into R and store it in a variable named sales_data ?
+Solution:
+read_csv("sales_data.csv")
+sales_data <- read_csv("sales_data.csv")
+
+Question 2.1: Display the first few rows of the data-set to get an overview of its structure
+Solution: head(playlist_data)
+
+Question 2.2: Display all the columns of the variable stacked one below another
+Solution: glimpse(playlist_data)
+
+Question 2.3: How many columns are there in the dataset?
+Solution: ncol(playlist_data)
+
+Question 2.4: What is the total count of DJs?
+Solution: nrow(playlist_data)
+
+Question 2.5: Display all the location of all the DJs
+Solution: playlist_data$Location
+
+Question 2.6: Display the age of the DJs
+Solution: playlist_data$Age
+
+Question 3.1: Create a plot to visualize the relationship between DJs’ ages and their ratings.
+Solution: ggplot(playlist_data) + aes(x=Age, y=Rating) + geom_point()
+
+Question 3.2: Label the x-axis as “Age” and the y-axis as “Rating.”
+Solution: ggplot(playlist_data) + aes(x=Age, y=Rating) + geom_point() +labs(x="Age", y="Rating")
+
+Question 3.3: Represent data using points
+Solution: ggplot(playlist_data) + aes(x=Age, y=Rating) + geom_point() +labs(x="Age", y="Rating")
+
+Question 3.4: Can you change the points represented by dots/small circles to any other shape of your liking?
+Solution: ggplot(playlist_data) + aes(x=Age, y=Rating) + geom_point(shape="+") +labs(x="Age", y="Rating")
+
+Question 3.5: Insert a suitable title and briefly provide your insights in the caption
+Solution: ggplot(playlist_data) + aes(x=Age, y=Rating) + geom_point(shape="+") +labs(x="Age", y="Rating", title="DJ Ratings versus their Age", caption="There is no relationship between DJ's ratings and their age.")
+
+```{r, out.height= "350px",out.width= "350px",echo=TRUE,eval=TRUE}
+knitr::include_graphics("/Users/annettelokexinghui/Dropbox/Mac/Documents/NM2207/Week-2/Screenshot 2023-08-21 at 6.11.50 PM.png") 
+``` 

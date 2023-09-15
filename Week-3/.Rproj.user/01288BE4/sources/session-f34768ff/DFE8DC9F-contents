@@ -1,0 +1,445 @@
+---
+pdf_document: default
+author: "Insert your name here"
+date: "`r Sys.Date()`"
+output:
+  word_document: default
+  df_print: paged
+  pdf_document: default
+  html_document: null
+title: "Week-3: Code-along"
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# I. Code to edit and execute
+
+**To be submitted on canvas before attending the tutorial**
+
+
+### Loading packages
+
+```{r, eval=TRUE,echo=TRUE}
+library(tidyverse)
+
+```
+
+### Assigning values to variables
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- 'A'
+x
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- "Apple"
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- FALSE
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- 5L
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- 5
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- 1i
+
+```
+
+### Checking the type of variables
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- 'A'
+typeof(x)
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- "Apple"
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- FALSE
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- 5L
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- 5
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- 1i
+typeof(x)
+
+```
+
+### Need for data types
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+cat_lovers <- read_csv("cat-lovers.csv")
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+mean(cat_lovers$number_of_cats)
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+?mean()
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+as.integer(cat_lovers$number_of_cats)
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+cat_lovers$number_of_cats
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+as.numeric(cat_lovers$number_of_cats)
+
+```
+
+### Create an empty vector
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- vector()
+typeof(x)
+```
+
+### Create vectors of type logical
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+x<-vector("logical",length=5)
+
+print(x)
+
+print(typeof(x))
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+x<-logical(5)
+
+print(x)
+
+print(typeof(x))
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+x<-c(TRUE,FALSE,TRUE,FALSE,TRUE)
+
+print(x)
+
+print(typeof(x))
+```
+
+### Create vectors of type character
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+x<-vector("character",length=5)
+
+print(x)
+
+print(typeof(x))
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+x <- character(5)
+
+print(x)
+
+print(typeof(x))
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+x <- c('A','b','r','q')
+
+print(x)
+
+print(typeof(x))
+```
+
+### Create vectors of type integer
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+x <- vector("integer", length=5)
+
+print(x)
+
+print(typeof(x))
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- integer(5)
+print(x)
+print(typeof(x))
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- c(1,2,3,4,5)
+print(x)
+print(typeof(x))
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+x <- seq(from=1, to=5,by=0.1)
+
+print(x)
+
+print(typeof(x))
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+x <- 1:5
+
+print(x)
+
+print(typeof(x))
+```
+
+### Create vectors of type double
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+x <- vector("double", length=5)
+
+print(x)
+
+print(typeof(x))
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+x <- double(5)
+
+print(x)
+
+print(typeof(x))
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+x <- c(1.787,0.63573,2.3890)
+
+print(x)
+
+print(typeof(x))
+```
+
+### Implicit coercion
+
+#### Example 1
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- c(1.8)
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x<- c(x,'a')
+typeof(x)
+
+```
+
+#### Example 2
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- c(TRUE)
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- c(x, 2)
+typeof(x)
+
+```
+
+#### Example 3
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- c('a')
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- c(x,TRUE)
+typeof(x)
+
+```
+
+
+#### Example 4
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- 1L
+typeof(x)
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- c(x, 2)
+typeof(x)
+
+```
+
+### Explicit coercion
+
+#### Example 1
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- c(1L)
+typeof(x)
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- as.character(x)
+typeof(x)
+```
+
+#### Example 2
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <-('A')
+typeof(x)
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- as.numeric(x)
+typeof(x)
+
+```
+
+### Accessing elements of the vector
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- c(1,10,9,8,1,3,5)
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x[3]
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x[2:4]
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x[c(1,3,5)]
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x[c(TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE)]
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x[x<10]
+```
+
+### Examining vectors
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+print(length(x))
+
+print(typeof(x))
+
+print(str(x))
+```
+
+### Lists
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+my_pie = list(type="key lime", diameter=7, is.vegetarian=TRUE)
+my_pie
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+names(my_pie)
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+my_pie$type
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+my_pie["type"]
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+my_pie[["type"]]
+```
+
+#### Exploring data-sets
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+options(repos = "https://cran.rstudio.com/")
+# Install package
+install.packages("openintro")
+# Load the package
+library(openintro)
+# Load package
+library(tidyverse)
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+glimpse(loans_full_schema)
+```
+
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+
+loans <- loans_full_schema %>% 
+  select(paid_total, term, interest_rate,
+         annual_income,paid_late_fees,debt_to_income)
+
+glimpse(loans)
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+loans <- loans_full_schema %>% 
+  select(grade, state, homeownership, disbursement_method)
+glimpse(loans)
+```
