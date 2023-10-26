@@ -1,0 +1,30 @@
+---
+title: "Final project-10"
+author: "Annette"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Week 9 submission
+
+Q1: What is the topic you have finalised?
+The topic ive chosen is: 'The Cost of Living in Singapore.' It's an issue that's close to my heart, driven by observations of my peers, friends, and family, as well as conversations I've witnessed on social media platforms. Many young working adults in Singapore, like myself, grapple with concerns about affording basic necessities while pursuing personal goals like work-life balance and leisure. I want to use data to show why young people struggle to "live, laugh, love".
+
+
+Q2: What are the data sources you have curated so far?
+I have found data that is provided publicly by the government on <https://www.singstat.gov.sg/> and <https://beta.data.gov.sg/>, about Singaporean's wages accross industry and wage, and about Singapore's CPI (Consumer Price Index) with 2019 as the base year. I intend to analyse the trends and compare the rate of growth between wages and CPI, and see whether it could provide further insight into why so many Singaporeans are pessimistic about their future.
+
+## Week 10 submission
+
+Q1: What is the question that you are going to answer?
+How does the rising cost of living in Singapore affect people with different levels of income, and is education truly a device for people with lower incomes to stay afloat in Singapore?
+
+Q2: Why is this an important question?
+
+This question addresses the fundamental issue of financial stability for individuals and families in Singapore. If wages do not keep up with the rising cost of living, it can lead to economic hardships, increased debt, and reduced overall quality of life. It also has implications for policymakers, as it highlights potential inequalities in income distribution and the need for policies to address these disparities.
+
+Q3: Which rows and columns of the dataset will be used to answer these questions?
