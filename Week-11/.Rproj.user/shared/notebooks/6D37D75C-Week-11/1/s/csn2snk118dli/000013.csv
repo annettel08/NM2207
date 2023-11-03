@@ -1,0 +1,8 @@
+"0",""
+"0","time_series_cases <- list(Alaska = time_series %>% filter(state==""AK"") %>% select(date,cases))"
+"0","time_series_cases$California <- time_series %>% filter(state==""CA"") %>% select(date,cases)"
+"0","time_series_cases$New_Jersey <- time_series %>% filter(state==""NJ"") %>% select(date,cases)"
+"0","time_series_cases$Tennessee <- time_series %>% filter(state==""TN"") %>% select(date,cases)"
+"0","time_series_cases$District_of_Columbia <- time_series %>% filter(state==""DC"") %>% select(date,cases)"
+"0",""
+"0","ggplot(data, aes(x=state,y=population)) + geom_bar(stat=""identity"") +labs(x=""States"",y=""Population"") + theme_bw()"
