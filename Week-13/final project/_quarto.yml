@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Annette"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About me
+      - href: NM2207 project.qmd
+        text: NM2207 Project
+    tools:
+      - icon: github
+        href: https://github.com/annettel08
+        
+ 
+styles:
+  - path: "styles.css"
+
+format:
+  html:
+    theme: minty
+    css: styles.css
+    toc: true
+
+content:
+  - "Website_HTML_File.Rhtml"
+
+editor: visual
+

@@ -1,0 +1,65 @@
+body {
+  background-color: #FFF7EF;
+  margin-left: 40px;
+}
+
+.navbar {
+  background-color: #99D8D5;
+}
+
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('fonts/LEMONMILK-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Lemon Milk', sans-serif;
+}
+
+@font-face {
+  font-family: 'Kannada MN';
+  src: local('Kannada MN'), url('fonts/Kannada MN.ttc') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Kannada MN', sans-serif;
+}
+
+.repository-link {
+  position: absolute; 
+  top: 70px; 
+  right: 20px; 
+  background-color: #FFF7EF;
+  color: #102828;
+  padding: 10px;
+  text-align: right;
+  margin: 10px;
+  z-index: 0; 
+}
+
+.fa-github {
+height: 70px;
+width: 70px;
+}
+
+<style>
+.left-align {
+   text-align: left;
+   margin: 0;
+   padding: 0;
+   float: left;
+}
+</style>
+
+.sidebar {
+  width: 10%; 
+}
+
+
+.main-body {
+  width: 90%; 
+}
